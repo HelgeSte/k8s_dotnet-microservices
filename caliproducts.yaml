@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: caliproducts
+  name: caliproducts
+  namespace: dotnet-microsvc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: caliproducts
+  template:
+    metadata:
+      labels:
+        app: caliproducts
+    spec:
+      containers:
+      - image: helgeste/ecommerceapiproducts
+        name: caliproductsfornia-com

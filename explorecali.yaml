@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: explorecali
+  name: explorecali
+  namespace: dotnet-microsvc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: explorecali
+  template:
+    metadata:
+      labels:
+        app: explorecali
+    spec:
+      containers:
+      - image: helgeste/explorecalifornia.com
+        name: explorecalifornia-com

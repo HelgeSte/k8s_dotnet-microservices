@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: calicustomers
+  name: calicustomers
+  namespace: dotnet-microsvc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: calicustomers
+  template:
+    metadata:
+      labels:
+        app: calicustomers
+    spec:
+      containers:
+      - image: helgeste/ecommerceapicustomers
+        name: calicustomersfornia-com

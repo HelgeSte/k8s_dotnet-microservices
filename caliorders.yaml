@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: caliorders
+  name: caliorders
+  namespace: dotnet-microsvc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: caliorders
+  template:
+    metadata:
+      labels:
+        app: caliorders
+    spec:
+      containers:
+      - image: helgeste/ecommerceapiorders
+        name: caliorders-com

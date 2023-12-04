@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: searchcali
+  name: searchcali
+  namespace: dotnet-microsvc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: searchcali
+  template:
+    metadata:
+      labels:
+        app: searchcali
+    spec:
+      containers:
+      - image: helgeste/ecommerceapisearch
+        name: searchcalifornia-com
